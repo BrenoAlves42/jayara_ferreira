@@ -1,0 +1,47 @@
+
+/* Button style for buttonClass2 */
+.btn-2 {
+	@apply text-xl bg-white text-black font-bold px-4 py-2 rounded-none relative overflow-hidden; /* Tailwind utilities via @apply */
+}
+
+.btn-2::before,
+.btn-2::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 0;
+	transition: width 0.35s ease;
+	z-index: 0;
+}
+
+.btn-2::before {
+	left: 0;
+	background: rgb(196, 181, 253);
+}
+.btn-2::after {
+	right: 0;
+	background: rgb(196, 181, 253);
+}
+
+.btn-2 > * { position: relative; z-index: 10; }
+
+.btn-2:hover::before,
+.btn-2:hover::after {
+	width: 51%;
+}
+
+.btn-2 {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-2 {
+	transition: color 0.2s ease;
+}
+
+.btn-2:hover {
+	color: white;
+}
+

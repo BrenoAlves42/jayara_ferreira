@@ -1,1 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global page reset to avoid white borders behind background image */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-image: url('/bg2.png');
+  background-size: 100% auto;
+  min-width: 906px;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+/* Hide scrollbars while keeping scrolling functional */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 /* You can add global styles to this file, and also import other style files */
