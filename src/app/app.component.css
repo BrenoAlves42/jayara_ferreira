@@ -1,9 +1,28 @@
 
 /* Button style for buttonClass2 */
 .btn-2 {
-	@apply text-xl bg-white text-black font-bold px-4 py-2 rounded-none relative overflow-hidden; /* Tailwind utilities via @apply */
+	@apply text-lg font-bold tracking-wider uppercase
+		text-white
+		px-8 py-3
+		rounded-full
+		border border-white/20
+		bg-black/40
+		backdrop-blur-md
+		relative overflow-hidden;
+
+	transition:
+		color 0.2s ease,
+		transform 0.2s ease,
+		box-shadow 0.3s ease;
 }
 
+.btn-2:hover {
+	color: black;
+	transform: translateY(-2px);
+	box-shadow:
+		0 10px 25px rgba(0,0,0,0.4),
+		0 0 25px rgba(196,181,253,0.3);
+}
 .btn-2::before,
 .btn-2::after {
 	content: '';
@@ -31,17 +50,6 @@
 	width: 51%;
 }
 
-.btn-2 {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-}
 
-.btn-2 {
-	transition: color 0.2s ease;
-}
 
-.btn-2:hover {
-	color: white;
-}
 

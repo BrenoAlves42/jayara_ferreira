@@ -1,37 +1,154 @@
-<div class="min-w-[906px] max-h-screen w-full">
-  <div class="w-full flex items-center justify-between px-4">
-    <div>
-      <p 
-        [ngClass]="buttonClass"
-        class="text-white text-2xl font-bold px-1 py-2" >
-        JAYARA FERREIRA
-      </p>
-    </div>
+<div>
+  <!-- Desktop layout (unchanged visual) -->
+  <div class="hidden md:block">
+    <div class="relative w-full">
+      <img src="/bg2.png" alt="background" class="w-full block" />
 
-    <div class="flex items-center space-x-2">
-      <button [ngClass]="buttonClass">LANÇAMENTOS</button>
-      <button [ngClass]="buttonClass">SOBRE MIM</button>
-      <button [ngClass]="buttonClass" aria-label="Instagram" class="pt-1" (click)="openInstagram()">
-        <img src="/insta.svg" alt="Instagram" class="h-6 w-6" />
-      </button>
-      <button [ngClass]="buttonClass" aria-label="Spotify" class="pt-1" (click)="openSpotify()">
-        <img src="/spot.svg" alt="Spotify" class="h-6 w-6" />
-      </button>
-      <button [ngClass]="buttonClass" aria-label="YouTube" class="pt-1" (click)="openYoutube()">
-        <img src="/yt.svg" alt="YouTube" class="h-6 w-6" />
-      </button>
-      <button [ngClass]="buttonClass" aria-label="TikTok" class="pt-1" (click)="openTiktok()">
-        <img src="/tik.svg" alt="TikTok" class="h-6 w-6" />
-      </button>
+      <div class="absolute top-[1%] left-1/2 transform -translate-x-1/2 w-full px-4 z-20">
+        <div class="w-full flex justify-between">
+          <div class="items-left">
+            <p
+              [ngClass]="buttonClass"
+              class="text-white text-2xl font-bold px-1 py-2">
+              JAYARA FERREIRA
+            </p>
+          </div>
+
+          <div class="flex items-right space-x-2">
+            <button [ngClass]="buttonClass" (click)="scrollToSection(releaseSection)">LANÇAMENTOS</button>
+            <button [ngClass]="buttonClass" (click)="scrollToSection(aboutSection)">SOBRE MIM</button>
+            <button [ngClass]="buttonClass" aria-label="Instagram" class="pt-1" (click)="openInstagram()">
+              <img src="/insta.svg" alt="Instagram" class="h-6 w-6" />
+            </button>
+            <button [ngClass]="buttonClass" aria-label="Spotify" class="pt-1" (click)="openSpotify()">
+              <img src="/spot.svg" alt="Spotify" class="h-6 w-6" />
+            </button>
+            <button [ngClass]="buttonClass" aria-label="YouTube" class="pt-1" (click)="openYoutube()">
+              <img src="/yt.svg" alt="YouTube" class="h-6 w-6" />
+            </button>
+            <button [ngClass]="buttonClass" aria-label="TikTok" class="pt-1" (click)="openTiktok()">
+              <img src="/tik.svg" alt="TikTok" class="h-6 w-6" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute left-1/2 top-[10%] transform -translate-x-1/2 flex flex-col items-center z-20 w-full max-w-[906px]">
+        <p class="text-white text-5xl font-bold px-4 py-2">NOVO SINGLE</p>
+        <button [ngClass]="buttonClass2" class="mt-2" (click)="openLinkTree()"><span>OUVIR</span></button>
+      </div>
+
+      <div #releaseSection class="absolute left-1/2 top-[41%] transform -translate-x-1/2 w-full max-w-[906px] text-center z-20 px-4">
+        <h1 class="text-white font-bold px-4 py-4" [ngStyle]="{'font-size': '22px'}">LANÇAMENTOS</h1>
+        <iframe
+          data-testid="embed-iframe"
+          style="border-radius:12px"
+          [src]="safeUrl"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media;"
+          loading="lazy">
+        </iframe>
+        <button [ngClass]="buttonClass2" class="mt-10" (click)="openLinkTree()">
+          <span>OUTRAS PLATAFORMAS</span>
+        </button>
+      </div>
+
+      <div #aboutSection class="absolute left-1/2 top-[75%] transform -translate-x-1/2 w-full max-w-[906px] text-center z-20 px-4">
+        <h1 class="text-white font-bold px-4 py-4" [ngStyle]="{'font-size': '22px'}">SOBRE MIM</h1>
+        <p class="text-white font-bold px-4 py-4" [ngStyle]="{'font-size': '18px'}">
+          Jayara Ferreira, anteriormente conhecida como Jay Ferrí, é cantora e compositora independente natural de Salgueiro, Pernambuco. Sua trajetória musical teve início em 2014, passando por diferentes projetos do punk ao blues rock.
+          Em 2020, lançou seu primeiro EP autoral, intitulado “O Avesso do Universo”, consolidando sua identidade artística e carreira solo o que possibilitou algumas oportunidades em shows como Cangaço Rock Fest em Serra Talhada, Festival Dona Marias em Triunfo e a duas primeiras edições do Festival Pernambuco Meu País no Palco País da Música.
+          Desde então diversos lançamentos autorais foram feitos aos longo dos anos, mas em 2026 ela passa a lançar seu primeiro disco com faixas inéditas permeadas de pop rock, blues rock e forró, apresentado a característica e estética principal do álbum que é mergulhar no abismo de estilos que influenciam a cantora, por isso então, chamado de Extra Abismus.
+        </p>
+      </div>
     </div>
   </div>
-  <div class="flex flex-col items-center z-10" style="top:1000px; left:50%;">
-      <p 
-        class="text-white text-5xl font-bold px-4 py-2">
-        NOVO SINGLE
-      </p>
-      <button [ngClass]="buttonClass2" class="mt-2" (click)="openLinkTree()">
-        <span>OUVIR</span>
-      </button>
+
+  <!-- Mobile layout -->
+  <div class="md:hidden bg-black min-h-screen">
+
+    <div class="relative w-full">
+      <img src="/bg2.png" alt="background" class="w-full block" />
+
+      <div class="absolute top-[1%] left-1/2 transform -translate-x-1/2 w-full px-4 z-20">
+        <div class="w-full flex justify-between">
+          <div class="items-left">
+            <p
+              [ngClass]="buttonClass"
+              class="text-white text-2xl font-bold px-1 py-2">
+              JAYARA FERREIRA
+            </p>
+          </div>
+
+        <button
+          aria-label="Menu"
+          class="text-white text-3xl leading-none"
+          (click)="toggleMobileMenu()">
+          ☰
+        </button>
+
+        <div
+          *ngIf="mobileMenuOpen"
+          class="absolute top-full right-4 mt-2 w-64 overflow-hidden rounded-xl bg-black/95 backdrop-blur-md border border-white/10 shadow-2xl">
+          <button
+            class="block w-full px-4 py-3 text-left text-white hover:bg-white/10"
+            (click)="scrollToSection(releaseSection); mobileMenuOpen=false">LANÇAMENTOS</button>
+          <button
+            class="block w-full px-4 py-3 text-left text-white hover:bg-white/10"
+            (click)="scrollToSection(aboutSection); mobileMenuOpen=false">SOBRE MIM</button>
+          <div class="border-t border-white/10"></div>
+          <button
+            class="block w-full px-4 py-3 text-left text-white hover:bg-white/10"
+            (click)="openInstagram(); mobileMenuOpen=false">Instagram</button>
+          <button
+            class="block w-full px-4 py-3 text-left text-white hover:bg-white/10"
+            (click)="openSpotify(); mobileMenuOpen=false">Spotify</button>
+          <button
+            class="block w-full px-4 py-3 text-left text-white hover:bg-white/10"
+            (click)="openYoutube(); mobileMenuOpen=false">YouTube</button>
+
+          <button
+            class="block w-full px-4 py-3 text-left text-white hover:bg-white/10"
+            (click)="openTiktok(); mobileMenuOpen=false">TikTok</button>
+        </div>
+      </div>
+    </div>
+
+      <div class="absolute left-1/2 top-[10%] transform -translate-x-1/2 flex flex-col items-center z-20 w-full max-w-[906px]">
+        <p class="text-white text-18px font-bold px-4 py-2">NOVO SINGLE</p>
+        <button [ngClass]="buttonClass2" class="mt-2" (click)="openLinkTree()" style="padding-top: 0; height: 30px; min-width: 70px;"><span>OUVIR</span></button>
+      </div>
+
+      <div #releaseSection class="absolute left-1/2 top-[30%]  scale-50 transform -translate-x-1/2 w-full max-w-[800px] text-center z-20 px-4">
+        <h1 class="text-white font-bold px-4 py-4" [ngStyle]="{'font-size': '22px'}">LANÇAMENTOS</h1>
+        <iframe
+          data-testid="embed-iframe"
+          style="border-radius:12px"
+          [src]="safeUrl"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media;"
+          loading="lazy">
+        </iframe>
+        <button [ngClass]="buttonClass2" class="mt-10" (click)="openLinkTree()">
+          <span>OUTRAS PLATAFORMAS</span>
+        </button>
+      </div>
+
+      <div #aboutSection class="absolute left-1/2 top-[65%] scale-50 transform -translate-x-1/2 w-full max-w-[906px] text-center z-20 px-4">
+        <h1 class="text-white font-bold px-4 py-4" [ngStyle]="{'font-size': '22px'}">SOBRE MIM</h1>
+        <p class="text-white font-bold px-4 py-4" [ngStyle]="{'font-size': '18px'}">
+          Jayara Ferreira, anteriormente conhecida como Jay Ferrí, é cantora e compositora independente natural de Salgueiro, Pernambuco. Sua trajetória musical teve início em 2014, passando por diferentes projetos do punk ao blues rock.
+          Em 2020, lançou seu primeiro EP autoral, intitulado “O Avesso do Universo”, consolidando sua identidade artística e carreira solo o que possibilitou algumas oportunidades em shows como Cangaço Rock Fest em Serra Talhada, Festival Dona Marias em Triunfo e a duas primeiras edições do Festival Pernambuco Meu País no Palco País da Música.
+          Desde então diversos lançamentos autorais foram feitos aos longo dos anos, mas em 2026 ela passa a lançar seu primeiro disco com faixas inéditas permeadas de pop rock, blues rock e forró, apresentado a característica e estética principal do álbum que é mergulhar no abismo de estilos que influenciam a cantora, por isso então, chamado de Extra Abismus.
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>

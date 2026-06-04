@@ -6,11 +6,12 @@
 html, body {
   height: 100%;
   margin: 0;
-  background-image: url('/bg2.png');
+  /* background-image: url('/bg2.png'); */
   background-size: 100% auto;
   min-width: 906px;
   background-repeat: no-repeat;
   overflow-y: auto;
+  background-color: black;
 }
 
 /* Hide scrollbars while keeping scrolling functional */
